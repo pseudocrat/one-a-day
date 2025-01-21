@@ -36,7 +36,7 @@ def add(title: str, description: str = typer.Option("", help="Task description")
     )
     conn.commit()
     conn.close()
-    c.print(f"[green]Task '{title}' added![/green]")
+    c.print(f"[green]Task '{title}' added![/]")
 
 
 # List all tasks
@@ -81,7 +81,7 @@ def update(
 
     conn.commit()
     conn.close()
-    c.print(f"[blue]Task {task_id} updated![/blue]")
+    c.print(f"[blue]Task {task_id} updated![/]")
 
 
 # Delete a task
@@ -93,7 +93,7 @@ def delete(task_id: int):
     cursor.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
     conn.commit()
     conn.close()
-    c.print(f"[red]Task {task_id} deleted![/red]")
+    c.print(f"[red]Task {task_id} deleted![/]")
 
 
 if __name__ == "__main__":
